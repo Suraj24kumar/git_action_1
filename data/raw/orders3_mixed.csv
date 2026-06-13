@@ -1,0 +1,6 @@
+order_id,customer_id,order_date,amount,status
+4001,801,2025-03-01,100.00,completed
+,802,2025-03-02,200.00,pending
+4003,803,bad-date,300.00,cancelled
+4004,804,2025-03-04,-10.00,completed
+4005,805,2025-03-05,500.00,returned
