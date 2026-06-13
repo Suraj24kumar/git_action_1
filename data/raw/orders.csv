@@ -1,0 +1,8 @@
+order_id,customer_id,order_date,amount,status
+1001,501,2025-01-01,1200.50,completed
+1002,502,2025-01-02,750.00,pending
+1003,503,2025-01-03,0,completed
+,504,2025-01-04,300.00,cancelled
+1005,505,wrong-date,999.00,completed
+1006,506,2025-01-06,-45.00,pending
+1007,507,2025-01-07,640.25,returned

@@ -1,0 +1,4 @@
+order_id,customer_id,order_date,amount,status
+5001,901,2025-04-01,100.00,completed
+5001,902,2025-04-02,200.00,pending
+5003,903,2025-04-03,300.00,cancelled

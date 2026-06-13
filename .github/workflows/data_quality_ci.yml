@@ -1,0 +1,51 @@
+name: Data Quality CI Pipeline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/raw/**"
+      - "src/**"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/**"
+  pull_request:
+    branches: [main]
+
+jobs:
+  data-quality-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate raw CSV files
+        run: python src/validate_data.py
+
+      - name: Transform raw CSV files
+        run: python src/transform_data.py
+
+      - name: Load clean data into SQLite
+        run: python src/load_to_sqlite.py
+
+      - name: Run unit tests
+        run: pytest tests/
+
+      - name: Upload pipeline outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-quality-pipeline-outputs
+          path: |
+            data/processed/*.csv
+            data/rejected/*.csv
+            data/warehouse/*.db
+            reports/*.json
