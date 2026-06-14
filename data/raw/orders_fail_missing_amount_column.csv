@@ -1,0 +1,3 @@
+order_id,customer_id,order_date,status
+5001,901,2025-08-01,completed
+5002,902,2025-08-02,pending
