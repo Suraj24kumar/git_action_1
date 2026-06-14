@@ -1,0 +1,5 @@
+order_id,customer_id,order_date,amount,status
+,801,invalid-date,-10,completed
+4002,,2025-07-02,0,pending
+4003,803,2025-07-03,-500,unknown
+4004,804,not-a-date,120,shipped

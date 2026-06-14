@@ -1,0 +1,5 @@
+order_id,customer_id,order_date,amount,status
+3001,701,2025-06-01,1000,completed
+3001,702,2025-06-02,600,pending
+3002,703,2025-06-03,750,cancelled
+3003,704,2025-06-04,500,completed
